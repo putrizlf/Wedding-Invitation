@@ -295,7 +295,7 @@
         <!-- ================= SCENE 1: COVER & WELCOME ================= -->
         <section id="scene-1"
             class="relative z-10 min-h-[100dvh] flex flex-col items-center text-center p-6 bg-cover bg-center transition-all duration-1000"
-            style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.55), rgba(248, 244, 235, 0.35), rgba(253, 251, 247, 0.65)), url('mempelai.jpeg');">
+            style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.55), rgba(248, 244, 235, 0.35), rgba(253, 251, 247, 0.65)), url('mempelai.jpg');">
 
             <!-- BAGIAN ATAS -->
             <div class="absolute top-14 left-0 right-0 flex flex-col items-center">                
@@ -576,74 +576,27 @@
             </section>            
 
             <!-- ================= SCENE: GALLERY (ULTRA-AESTHETIC BENTO GRID) ================= -->
+            <!-- ================= SCENE: GALLERY (DYNAMIC BENTO GRID FOR MANY PHOTOS) ================= -->
             <section id="galeri-section" class="px-6 py-16 text-center border-b border-gold-500/20">
                 <div class="reveal reveal-scale w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 border border-gold-500/30">
                     <i class="fas fa-camera-retro text-xl animate-float"></i>
                 </div>
                 <h2 class="reveal reveal-fade-up font-serif text-2xl font-bold gold-gradient-text mb-2">Galeri Bahagia</h2>
-                <p class="reveal reveal-fade-up delay-100 text-xs text-slate-600 mb-8 max-w-xs mx-auto">Potret Keindahan Perjalanan Cinta Putri & Firman (Klik foto untuk melihat lebih jelas)</p>
+                <p class="reveal reveal-fade-up delay-100 text-xs text-slate-600 mb-6 max-w-xs mx-auto">Potret Kebersamaan & Momen Indah Putri & Firman</p>
 
-                <!-- Bento Gallery Grid with Metallic Frames & Glassmorphism Badges -->
-                <div class="grid grid-cols-2 gap-3.5">
-                    
-                    <!-- Photo 1: Large Featured Card -->
-                    <div onclick="openLightbox(0)" class="reveal reveal-scale delay-100 col-span-2 relative overflow-hidden rounded-3xl border-2 border-gold-500/40 bg-white shadow-xl group cursor-pointer aspect-[16/10]">
-                        <img id="galeriImg0" src="lamaran.jpeg" alt="Momen Indah Firman & Putri" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/85 via-emerald-950/20 to-transparent opacity-80 group-hover:opacity-95 transition duration-300 flex flex-col justify-end p-4 text-left">
-                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-[10px] text-gold-200 font-bold w-max mb-1 backdrop-blur-md">
-                                <i class="fas fa-sparkles text-gold-300 mr-1"></i> Engagement Highlight
-                            </span>
-                            <p class="text-sm font-serif font-bold text-white tracking-wide">Kebersamaan Cinta</p>
-                            <p class="text-[10px] text-slate-200">Muhammad Firmansyah & Putri Zulfa</p>
-                        </div>
-                        <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:scale-110">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                    </div>
+                
 
-                    <!-- Photo 2: Portrait Card Left -->
-                    <div onclick="openLightbox(1)" class="reveal reveal-scale delay-200 relative overflow-hidden rounded-3xl border-2 border-gold-500/30 bg-white shadow-lg group cursor-pointer aspect-[3/4]">
-                        <img id="galeriImg1" src="putri.jpeg" alt="Potret Anggun Putri" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-70 group-hover:opacity-95 transition duration-300 flex items-end p-3 text-left">
-                            <div>
-                                <span class="text-[10px] text-gold-200 font-bold flex items-center"><i class="fas fa-heart text-red-400 mr-1 text-[9px]"></i> Mempelai Wanita</span>
-                                <p class="text-xs font-serif font-semibold text-white">Putri Zulfa</p>
-                            </div>
-                        </div>
-                        <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition duration-300">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                    </div>
+                <!-- Flexible Grid Layout Supporting Landscape & Portrait Photos -->
+                <div id="galleryContainer" class="grid grid-cols-2 gap-3.5">
+                    <!-- Photo items will be rendered dynamically via JS below -->
+                </div>
 
-                    <!-- Photo 3: Portrait Card Right -->
-                    <div onclick="openLightbox(2)" class="reveal reveal-scale delay-300 relative overflow-hidden rounded-3xl border-2 border-gold-500/30 bg-white shadow-lg group cursor-pointer aspect-[3/4]">
-                        <img id="galeriImg2" src="firman.jpeg" alt="Potret Gagah Firman" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-70 group-hover:opacity-95 transition duration-300 flex items-end p-3 text-left">
-                            <div>
-                                <span class="text-[10px] text-gold-200 font-bold flex items-center"><i class="fas fa-heart text-red-400 mr-1 text-[9px]"></i> Mempelai Pria</span>
-                                <p class="text-xs font-serif font-semibold text-white">Firmansyah</p>
-                            </div>
-                        </div>
-                        <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition duration-300">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                    </div>
-
-                    <!-- Photo 4: Full Wide Bottom Card -->
-                    <div onclick="openLightbox(3)" class="reveal reveal-scale delay-400 col-span-2 relative overflow-hidden rounded-3xl border-2 border-gold-500/40 bg-white shadow-xl group cursor-pointer aspect-[16/9]">
-                        <img id="galeriImg3" src="bersama.jpeg" alt="Menuju Hari Bahagia" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=800'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/85 via-emerald-950/20 to-transparent opacity-80 group-hover:opacity-95 transition duration-300 flex items-end p-4 text-left">
-                            <div>
-                                <span class="inline-block px-2 py-0.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-[9px] text-gold-200 font-bold mb-1 backdrop-blur-md">
-                                    <i class="fas fa-ring text-gold-300 mr-1"></i> Menuju Hari H
-                                </span>
-                                <p class="text-sm font-serif font-bold text-white tracking-wide">07 November 2026</p>
-                            </div>
-                        </div>
-                        <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition duration-300">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                    </div>
+                <!-- Load More Button -->
+                <div class="mt-8">
+                    <button id="btnLoadMore" onclick="loadMorePhotos()" class="btn-sheen inline-flex items-center space-x-2 py-2.5 px-6 rounded-full bg-white border border-gold-500/50 text-gold-700 font-bold text-xs shadow-md hover:bg-gold-50 transition">
+                        <i class="fas fa-images text-sm"></i>
+                        <span>Muat Foto Lainnya (<span id="photoCounter">0</span>)</span>
+                    </button>
                 </div>
             </section>            
 
@@ -714,7 +667,7 @@
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Abdullah &amp; Rita Yunita</span>
+                    <span class="text-left">Abdullah &amp; Rita Yusnita</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
                 </li>
 
@@ -730,9 +683,9 @@
 
                 <li class="flex items-start justify-between gap-4">
                     <span class="text-left">Norma &amp; Abdul Aziz</span>
-                    <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
+                    <span class="text-right text-slate-500 whitespace-nowrap">Tante &amp; Om</span>
                 </li>
-                
+
                 <li class="flex items-start justify-between gap-4">
                     <span class="text-left">Arisman &amp; Mia</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
@@ -783,8 +736,8 @@
             <ul class="text-xs text-slate-700 space-y-2.5">
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Hj. Badariah & H. Nawawi KN. (Alm)</span>
-                    <span class="text-right text-slate-500 whitespace-nowrap">Uwo &amp; Atuk</span>
+                    <span class="text-left">Hj. Badariah</span>
+                    <span class="text-right text-slate-500 whitespace-nowrap">Uwo</span>
                 </li>
                 
                 <li class="flex items-start justify-between gap-4">
@@ -793,7 +746,7 @@
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Hj. Khairiyah, S.Pd &amp; H. Darwis, S.Pd</span>
+                    <span class="text-left">Hj. Khairiyah, S.Pd &amp; H. Darwis</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Mak Lung &amp; Pak Lung</span>
                 </li>
 
@@ -1010,6 +963,24 @@
             document.getElementById('guestName').innerText = guest;
         }
 
+        // Audio & Music Control Logic
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            const audioIcon = document.getElementById('audioIcon');
+            if (isPlaying) {
+                bgMusic.pause();
+                audioIcon.className = 'fas fa-music';
+                isPlaying = false;
+            } else {
+                bgMusic.play().then(() => {
+                    audioIcon.className = 'fas fa-compact-disc animate-spin';
+                    isPlaying = true;
+                }).catch(e => console.log('Audio playback blocked:', e));
+            }
+        }
+
         // Open Invitation Logic
         function openInvitation() {
             // Trigger Fullscreen Mode
@@ -1018,109 +989,172 @@
                 docElem.requestFullscreen().catch(e => console.log("Fullscreen notice:", e));
             } else if (docElem.webkitRequestFullscreen) {
                 docElem.webkitRequestFullscreen();
-            } else if (docElem.msRequestFullscreen) {
-                docElem.msRequestFullscreen();
             }
 
+            // Hide Cover, Show Main Content & Nav Bar
+            document.getElementById('scene-1').classList.add('hidden');
             document.getElementById('mainContent').classList.remove('hidden');
-            document.getElementById('audioControl').classList.remove('hidden');
             document.getElementById('bottomNav').classList.remove('hidden');
-            
-            // Sembunyikan tombol Buka Undangan setelah diklik
-            const btnOpen = document.getElementById('btnOpenInvitation');
-            if (btnOpen) {
-                btnOpen.classList.add('hidden');
-            }
+            document.getElementById('audioControl').classList.remove('hidden');
 
-            // Auto Play Audio
-            const audio = document.getElementById('bgMusic');
-            audio.play().catch(e => console.log("Autoplay policy: User interaction needed"));
+            // Play Music
+            toggleAudio();
 
-            // Smooth Scroll to Main Content
-            document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
-
-            // Trigger initial scroll animation check
-            setTimeout(checkScroll, 100);
-        }
-
-        // Audio Control Logic
-        let isPlaying = true;
-        function toggleAudio() {
-            const audio = document.getElementById('bgMusic');
-            const icon = document.getElementById('audioIcon');
-            if (isPlaying) {
-                audio.pause();
-                icon.classList.remove('animate-spin');
-                icon.classList.replace('fa-music', 'fa-volume-mute');
-            } else {
-                audio.play();
-                icon.classList.add('animate-spin');
-                icon.classList.replace('fa-volume-mute', 'fa-music');
-            }
-            isPlaying = !isPlaying;
-        }
-
-        // Reversible Scroll Reveal Animation (Adds & Removes active class on scroll)
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -20px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    // Removes active class when scrolled out of view so animation resets on scroll back up
-                    entry.target.classList.remove('active');
-                }
-            });
-        }, observerOptions);
-
-        function checkScroll() {
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach(el => observer.observe(el));
+            // Trigger Scroll Check for Initial Reveal
+            checkScroll();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Countdown Timer Logic
-        const targetDate = new Date("Nov 07, 2026 08:00:00").getTime();
-        setInterval(function() {
+        const weddingDate = new Date('November 7, 2026 09:00:00').getTime();
+
+        function updateCountdown() {
             const now = new Date().getTime();
-            const difference = targetDate - now;
+            const distance = weddingDate - now;
 
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = `<div class="col-span-4 text-center font-bold text-emerald-900 py-2">Acara Telah Berlangsung</div>`;
+                return;
             }
-        }, 1000);
 
-        // Lightbox Gallery Modal Logic
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Reversible Scroll Reveal Animations
+        function checkScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementBottom = el.getBoundingClientRect().bottom;
+
+                if (elementTop < windowHeight - 60 && elementBottom > 60) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkScroll);
+
+        // Lightbox Gallery Modal Logic & Dynamic Multi-Format Photo Gallery
         let currentImageIndex = 0;
+        let visibleCount = 10;
+        let currentFilter = 'all';
+
+        // Master Collection of 10 Photos (Exact Requested Layout: P1-P2, L1, P3-P4, L2, P5-P8)
         const galleryImages = [
-            { id: 'galeriImg0', caption: 'Kebersamaan Cinta - Muhammad Firmansyah & Putri Zulfa' },
-            { id: 'galeriImg1', caption: 'Mempelai Wanita - Putri Zulfa' },
-            { id: 'galeriImg2', caption: 'Mempelai Pria - Muhammad Firmansyah' },
-            { id: 'galeriImg3', caption: 'Menuju Hari Bahagia - 07 November 2026' }
+            // 1-2: Portrait 2 kolom (P1 & P2)
+            { id: 0, src: 'P1.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Kebersamaan 1'},
+            { id: 1, src: 'P2.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Kebersamaan 2'},
+
+            // 3: Landscape Full Width (L1)
+            { id: 2, src: 'L1.jpg', aspect: 'landscape', span: 'col-span-2 aspect-[3/2]', caption: 'Momen Indah Kebersamaan' },
+
+            // 4-5: Portrait 2 kolom (P3 & P4)
+            { id: 3, src: 'P3.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Kebersamaan 3' },
+            { id: 4, src: 'P4.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Kebersamaan 4' },
+
+            // 6: Landscape Full Width (L2)
+            { id: 5, src: 'L2.jpg', aspect: 'landscape', span: 'col-span-2 aspect-[3/2]', caption: 'Kebersamaan Cinta' },
+
+            // 7-10: Portrait 2 kolom (P5, P6, P7, P8)
+            { id: 6, src: 'P5.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Kebahagiaan 5' },
+            { id: 7, src: 'P6.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Kebahagiaan 6' },
+            { id: 8, src: 'P7.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Kebahagiaan 7' },
+            { id: 9, src: 'P8.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Kebahagiaan 8' }
         ];
 
-        function openLightbox(index) {
-            currentImageIndex = index;
-            updateLightbox();
-            const modal = document.getElementById('lightboxModal');
-            modal.classList.remove('hidden');
+        function renderGallery() {
+            const container = document.getElementById('galleryContainer');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            const filtered = galleryImages.filter(img => currentFilter === 'all' || img.aspect === currentFilter);
+            const toDisplay = filtered.slice(0, visibleCount);
+
+            toDisplay.forEach((item) => {
+                const card = document.createElement('div');
+                card.className = `reveal reveal-scale relative overflow-hidden rounded-3xl border-2 border-gold-500/30 bg-white shadow-lg group cursor-pointer ${item.span}`;
+                card.onclick = () => openLightbox(item.id);
+                
+                card.innerHTML = `
+                    <img src="${item.src}" alt="${item.caption}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-75 group-hover:opacity-95 transition duration-300 flex items-end p-3 text-left">
+                        <div>
+                            <span class="text-[9px] text-gold-200 font-bold uppercase tracking-wider block mb-0.5"></span>
+                            <p class="text-xs font-serif font-semibold text-white leading-tight"></p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Update Counter & Button Visibility
+            const remaining = filtered.length - toDisplay.length;
+            const counterElem = document.getElementById('photoCounter');
+            const btnMore = document.getElementById('btnLoadMore');
+
+            if (counterElem) counterElem.innerText = remaining;
+            if (btnMore) {
+                if (remaining <= 0) {
+                    btnMore.classList.add('hidden');
+                } else {
+                    btnMore.classList.remove('hidden');
+                }
+            }
+
+            checkScroll();
+        }
+
+        function loadMorePhotos() {
+            visibleCount += 4;
+            renderGallery();
+        }
+
+        function filterGallery(type) {
+            currentFilter = type;
+            visibleCount = 10;
+            
+            // Update Tab Active States
+            const btns = document.querySelectorAll('.gallery-filter-btn');
+            btns.forEach(b => {
+                b.className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white/80 text-slate-700 border border-gold-500/30 hover:border-gold-500 transition";
+            });
+
+            if (type === 'all') document.getElementById('filterAll').className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition";
+            if (type === 'landscape') document.getElementById('filterLandscape').className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition";
+            if (type === 'portrait') document.getElementById('filterPortrait').className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition";
+
+            renderGallery();
+        }
+
+        function openLightbox(id) {
+            const index = galleryImages.findIndex(img => img.id === id);
+            if (index !== -1) {
+                currentImageIndex = index;
+                updateLightbox();
+                document.getElementById('lightboxModal').classList.remove('hidden');
+            }
         }
 
         function updateLightbox() {
             const item = galleryImages[currentImageIndex];
-            const imgElem = document.getElementById(item.id);
-            document.getElementById('lightboxImage').src = imgElem ? imgElem.src : '';
+            document.getElementById('lightboxImage').src = item.src;
             document.getElementById('lightboxCaption').innerText = item.caption;
         }
 
@@ -1137,6 +1171,11 @@
             currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
             updateLightbox();
         }
+
+        // Initialize Gallery on Page Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+        });
 
         // Gift Modal Logic
         function openGiftModal() {
